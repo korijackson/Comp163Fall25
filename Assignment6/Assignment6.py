@@ -1,3 +1,8 @@
+"""Kori Jackson
+   October 7,2025
+   Comp 163: Example
+   Demonstrates mastery of string methods for data cleaning and formatting"""
+
 #gather input from user; loop until input = DONE
 print("Enter contact information (format: name|phone|email|address):" )
 contact_list = []
@@ -34,6 +39,7 @@ for contact in contact_list:
     formatted_address = " ".join(address_list)
     contact[3] = formatted_address
 
+#format output
 print("=== CONTACT DIRECTORY ===")
 print()
 
