@@ -19,15 +19,20 @@ for contact in contact_list:
     #format address
     contact[3] = contact[3].strip().title()
     address_list = contact[3].split()
-    address_list[-2] = address_list[-2].upper()
+    for index, part in enumerate(address_list):
+        if len(part) == 2 and part.isalpha():
+            address_list[index] = part.upper()
     formatted_address = " ".join(address_list)
     contact[3] = formatted_address
 
-    #standardize phone numbers
+    #format phone numbers
     for char in contact[1]:
         if not char.isdigit():
             contact[1] = contact[1].replace(char, "")
     contact[1] = f"({contact[1][0:3]}) {contact[1][3:6]}-{contact[1][6:]}"
+
+    #format email
+    contact[2] = contact[2].lower().strip()
 
 
 print(contact_list)
